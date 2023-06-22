@@ -1,0 +1,761 @@
+/* CSS de base */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&family=Press+Start+2P&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Press Start 2P", cursive;
+  color: #eef1ef;
+}
+
+p,
+.nom-competence {
+  font-family: "Poppins", sans-serif;
+  color: #eef1ef;
+}
+
+body {
+  background-color: #0e131f;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#d639ce, #7f7979);
+  clip-path: circle(20% at 0 0);
+  z-index: -1;
+}
+
+/* ---------------------------------------------------------------------- */
+
+/* CSS qui peut être généralisé */
+
+/* CSS pour les titres de partie */
+.titre {
+  margin-top: 18px;
+  font-size: 1.8em;
+  text-shadow: 0px 0px 10px #eef1ef;
+}
+
+/* CSS pour les boules */
+.boule {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: #0e131f;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.boule::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-image: conic-gradient(
+    transparent,
+    transparent,
+    transparent,
+    #d639ce
+  );
+  animation: animate 3s linear infinite;
+  animation-delay: -1.5s;
+}
+
+.boule::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-image: conic-gradient(
+    transparent,
+    transparent,
+    transparent,
+    #8c10e7
+  );
+  animation: animate 3s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.boule span {
+  position: absolute;
+  inset: 5px;
+  border-radius: 100%;
+  background: #0e131f;
+  z-index: 1;
+}
+
+.boule h2 {
+  position: absolute;
+  top: 35%;
+  z-index: 2;
+  color: #eef1ef;
+  font-size: 1.2em;
+}
+
+/* ---------------------------------------------------------------------- */
+
+/* En-tête de page */
+
+header .top-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header .top-page img {
+  margin-top: 18px;
+  width: 75px;
+  pointer-events: none;
+}
+
+header .top-page h2 {
+  font-size: 1.8em;
+  margin-top: 25px;
+  margin-right: 30px;
+  text-shadow: 0px 0px 10px #eef1ef;
+}
+
+/* ---------------------------------------------------------------------- */
+
+/* Partie 1 = À propos */
+
+.partie1 {
+  margin-top: 25px;
+  min-height: 45vh;
+}
+
+.partie1 .boite {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.partie1 .boite p {
+  width: 75%;
+  text-align: center;
+  margin-top: 25px;
+  color: #eef1ef;
+  line-height: 1.8em;
+  letter-spacing: 1px;
+}
+
+/* ---------------------------------------------------------------------- */
+
+/* Partie 2 = Compétences */
+
+.partie2 {
+  margin-top: 25px;
+}
+
+.partie2 .boite2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 35px;
+}
+
+/* Partie 2 = Compétences // Mobile */
+
+/* CSS Générale // Cercle de progression */
+
+.partie2 .boite2 .boite-cercle {
+  box-shadow: 9.91px 9.91px 15px #070a10, -9.91px -9.91px 15px #151d2f;
+  margin-top: 30px;
+  padding: 30px 25px;
+  border-radius: 50px;
+  border: 5px solid #0e131f;
+  transition: 0.2s;
+}
+
+.partie2 .boite2 .progress-cercle4 {
+  margin-bottom: 30px;
+}
+
+.partie2 .boite2 .boite-cercle:hover {
+  box-shadow: 9.91px 9.91px 15px #070a10, -9.91px -9.91px 15px #151d2f,
+    inset 9.91px 9.91px 15px #070a10, inset -9.91px -9.91px 15px #151d2f;
+}
+
+.partie2 .boite2 .boite-cercle .pourcentage {
+  position: relative;
+}
+
+.partie2 .boite2 .boite-cercle svg {
+  height: 100px;
+  width: 100px;
+}
+
+.partie2 .boite2 .boite-cercle svg circle {
+  fill: none;
+  stroke: #d639ce;
+  stroke-width: 10px;
+  transform: translate(10px, 10px);
+  stroke-linecap: round;
+  stroke-dasharray: 250;
+  stroke-dashoffset: 250;
+}
+
+.partie2 .boite2 .boite-cercle svg circle:nth-child(1) {
+  stroke: #7f7979;
+  stroke-dashoffset: 0;
+}
+
+.partie2 .boite2 .boite-cercle span {
+  position: absolute;
+  font-family: "Poppins", sans-serif;
+  color: #eef1ef;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.partie2 .boite2 .boite-cercle p {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* Cercle de progression du HTML */
+
+.partie2 .boite2 .boite-cercle svg circle:nth-child(2) {
+  animation: circle 2s forwards;
+}
+
+@keyframes circle {
+  to {
+    stroke-dashoffset: 37;
+  }
+}
+
+/* Cercle de progression du CSS */
+
+.partie2 .boite2 .progress-cercle2 svg circle:nth-child(2) {
+  animation: circle2 2s forwards;
+}
+
+@keyframes circle2 {
+  to {
+    stroke-dashoffset: 75;
+  }
+}
+
+/* Cercle de progression du JavaScript */
+
+.partie2 .boite2 .progress-cercle3 svg circle:nth-child(2) {
+  animation: circle3 2s forwards;
+}
+
+@keyframes circle3 {
+  to {
+    stroke-dashoffset: 250;
+  }
+}
+
+/* Cercle de progression du Python */
+
+.partie2 .boite2 .progress-cercle4 svg circle:nth-child(2) {
+  animation: circle4 2s forwards;
+}
+
+@keyframes circle4 {
+  to {
+    stroke-dashoffset: 125;
+  }
+}
+
+/* ---------------------------------------------------------------------- */
+
+/* Partie 3 = Projets */
+
+.partie3 {
+  margin-top: 25px;
+}
+
+.partie3::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#8c10e7, #d639ce);
+  clip-path: circle(30% at right 50%);
+  z-index: -1;
+}
+
+.partie3 .boite3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 35px;
+}
+
+/* Partie 3 = CSS Générale // Carte Glass */
+
+.partie3 .boite3 .boite-carte {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  flex-wrap: wrap;
+  z-index: 1;
+  margin-top: 20px;
+}
+
+.partie3 .boite3 .boite-carte .carte {
+  position: relative;
+  width: 290px;
+  height: 400px;
+  margin: 15px;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.partie3 .boite3 .boite-carte .carte span {
+  position: absolute;
+  top: -20px;
+  right: 20px;
+  font-size: 8em;
+  color: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+}
+
+.partie3 .boite3 .boite-carte .carte h2 {
+  position: absolute;
+  font-size: 2em;
+  text-align: center;
+  pointer-events: none;
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.partie3 .boite3 .boite-carte .carte:hover h2 {
+  opacity: 0;
+}
+
+.partie3 .boite3 .boite-carte .carte .information {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+/* CSS pour les infos des projets en hover */
+
+.partie3 .boite3 .boite-carte .carte .information:hover img {
+  opacity: 1;
+}
+
+.partie3 .boite3 .boite-carte .carte .information:hover p {
+  opacity: 1;
+}
+
+.partie3 .boite3 .boite-carte .carte .information:hover a {
+  opacity: 1;
+}
+
+/* Info du projet NoRoi */
+
+.partie3 .boite3 .boite-carte .carte .new1 img {
+  margin: auto auto 30px;
+  width: 260px;
+  border-radius: 10px;
+  opacity: 0;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.partie3 .boite3 .boite-carte .carte .new1 p {
+  width: 93%;
+  text-align: center;
+  margin: auto;
+  margin-top: -10px;
+  font-weight: bold;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.partie3 .boite3 .boite-carte .carte .new1 a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0e131f;
+  width: 40%;
+  height: 15%;
+  border-radius: 100px;
+  margin: auto;
+  margin-top: -20px;
+  font-weight: bold;
+  opacity: 0;
+  transition: 0.5s;
+  font-family: "Poppins", sans-serif;
+  color: #eef1ef;
+  font-size: 1.2em;
+}
+
+/* Info du projet Doctor Who UHC */
+
+.partie3 .boite3 .boite-carte .carte .uhc {
+  line-height: 45px;
+}
+
+.partie3 .boite3 .boite-carte .carte .new2 img {
+  margin: auto auto 40px;
+  width: 100px;
+  border-radius: 10px;
+  opacity: 0;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.partie3 .boite3 .boite-carte .carte .new2 p {
+  width: 95%;
+  text-align: center;
+  margin: auto;
+  margin-top: -25px;
+  font-weight: bold;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+/* Info du projet Python Top Secret */
+
+.partie3 .boite3 .boite-carte .carte .new3 img {
+  margin: auto;
+  width: 150px;
+  border-radius: 10px;
+  opacity: 0;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.partie3 .boite3 .boite-carte .carte .new3 p {
+  position: absolute;
+  font-weight: bold;
+  opacity: 0;
+  transition: 0.5s;
+  font-size: 2.5em;
+  left: 23px;
+  color: red;
+  rotate: -30deg;
+}
+
+.partie3 .boite3 .boite-carte .carte .new3:hover p {
+  animation: secret 1.5s linear;
+}
+
+@keyframes secret {
+  0% {
+    opacity: 0;
+  }
+
+  55% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------------------------------------------------------------------- */
+
+/* Partie 4 = Stratéria */
+
+.partie4 {
+  margin-top: 50px;
+  min-height: 90vh;
+}
+
+.partie4 .boite4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 35px;
+}
+
+.partie4 .details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.partie4 .details img {
+  margin: 8px;
+  width: 350px;
+  pointer-events: none;
+}
+
+.partie4 .details p {
+  width: 91%;
+  text-align: center;
+  margin-top: -30px;
+  color: #eef1ef;
+  line-height: 1.8em;
+  letter-spacing: 1px;
+}
+
+.partie4 .details .bouton-discord {
+  margin-top: 30px;
+  height: 75px;
+  width: 220px;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0e131f;
+  box-shadow: 5px 5px 8px #070a10, -5px -5px 8px #151d2f;
+  transition: 1s ease-in-out;
+}
+
+.partie4 .details .bouton-discord:hover {
+  box-shadow: inset 5px 5px 8px #070a10, inset -5px -5px 8px #151d2f;
+}
+
+.partie4 .details .bouton-discord a {
+  font-size: 1.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  color: #eef1ef;
+  font-weight: bold;
+  transition: 1s ease-in-out;
+  width: 350px;
+  height: 120px;
+}
+
+/* ---------------------------------------------------------------------- */
+
+/* Footer = Réseaux */
+
+footer {
+  margin-top: 55px;
+}
+
+footer p {
+  color: #eef1ef;
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  font-size: 1.1em;
+}
+
+footer p a {
+  color: #eef1ef;
+  font-size: 1.1em;
+  text-shadow: 0px 0px 10px #eef1ef;
+  transition: 0.5s;
+}
+
+/* ---------------------------------------------------------------------- */
+
+/* CSS Responsive */
+
+/* Partie 2 = Compétences // Ordi */
+
+@media screen and (max-width: 599px) {
+  .ordinateur {
+    display: none;
+  }
+
+  .partie2 {
+    min-height: 130vh;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .portable {
+    display: none;
+  }
+
+  .partie2 {
+    min-height: 52vh;
+  }
+
+  .partie2 .boite2 .barre-progres {
+    display: flex;
+    margin-top: 35px;
+  }
+
+  .partie2 .boite2 .barre-progres .nom-competence {
+    display: flex;
+    flex-direction: column;
+    color: #eef1ef;
+    font-weight: bold;
+    margin-right: 40px;
+  }
+
+  .partie2 .boite2 .barre-progres .nom-competence span {
+    margin: 10px 0;
+    box-shadow: 9.91px 9.91px 15px #070a10, -9.91px -9.91px 15px #151d2f;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 50px;
+    border: 5px solid #0e131f;
+    transition: 0.2s;
+  }
+
+  .partie2 .boite2 .barre-progres .nom-competence span:hover {
+    box-shadow: 9.91px 9.91px 15px #070a10, -9.91px -9.91px 15px #151d2f,
+      inset 9.91px 9.91px 15px #070a10, inset -9.91px -9.91px 15px #151d2f;
+  }
+
+  .boite-barre {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .boite-barre .barre {
+    width: 300px;
+    height: 20px;
+    border-radius: 20px;
+    box-shadow: inset 6px 6px 8px #070a10, inset -6px -6px 8px #151d2f;
+  }
+
+  .boite-barre .barre .progression {
+    background: linear-gradient(to right, #8c10e7, #d639ce);
+    height: 100%;
+    border-radius: 20px;
+  }
+
+  /* Barre de progression du HTML */
+  .boite-barre .barre:nth-child(1) .progression {
+    width: 85%;
+  }
+
+  /* Barre de progression du CSS */
+  .boite-barre .barre:nth-child(2) .progression {
+    width: 70%;
+  }
+
+  /* Barre de progression du JavasScript */
+  .boite-barre .barre:nth-child(3) .progression {
+    width: 0%;
+  }
+
+  /* Barre de progression du Python */
+  .boite-barre .barre:nth-child(4) .progression {
+    width: 50%;
+  }
+}
+
+/* Responsive Ordi */
+
+@media screen and (min-width: 900px) {
+  header .top-page img {
+    width: 100px;
+  }
+
+  header .top-page h2 {
+    font-size: 3em;
+  }
+
+  .titre {
+    font-size: 2em;
+  }
+
+  .partie1 .boite p {
+    font-size: 1.2em;
+  }
+
+  .boule {
+    width: 100px;
+    height: 100px;
+  }
+
+  .boule span {
+    inset: 10px;
+  }
+
+  .boule::after {
+    width: 275px;
+    height: 275px;
+  }
+
+  .boule::before {
+    width: 275px;
+    height: 275px;
+  }
+
+  .boule h2 {
+    top: 32%;
+    font-size: 2em;
+  }
+
+  .partie3 .boite3 .boite-carte .carte {
+    margin: 50px;
+  }
+
+  .partie4 .details img {
+    width: 300px;
+  }
+
+  .partie4 .details p {
+    font-size: 1.2em;
+  }
+
+  .partie4 .details .bouton-discord {
+    height: 100px;
+    width: 250px;
+  }
+
+  .partie4 .details .bouton-discord a {
+    font-size: 1.4em;
+  }
+
+  footer p {
+    font-size: 1em;
+  }
+}
+
+/* ---------------------------------------------------------------------- */
