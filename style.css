@@ -198,15 +198,15 @@ footer .boite1 p {
 /* Couleur des différents réseaux */
 
 footer .boite1 .boite-reseaux ul li:nth-child(1) a {
-  color: #dd2a7b;
+  color: #00b3ff;
 }
 
 footer .boite1 .boite-reseaux ul li:nth-child(2) a {
-  color: #0080f7;
+  color: #ffffff;
 }
 
 footer .boite1 .boite-reseaux ul li:nth-child(3) a {
-  color: #f70000;
+  color: #00f708;
 }
 
 /* ---------------------------------------------------------------------- */
