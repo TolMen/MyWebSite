@@ -13,7 +13,7 @@
 ---
 
 Thank you for taking the time to explore this project.  
-Feel free to explore, learn, and modify it! ✨  
-For any questions or collaboration, don't hesitate to reach out! 📩
+Feel free to explore, learn, and modify it ! ✨  
+For any questions or collaboration, don't hesitate to reach out ! 📩
 
 [TolMen](https://github.com/TolMen) - [LinkedIn](https://www.linkedin.com/in/jessyfrachisse/) 
